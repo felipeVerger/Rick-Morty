@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom'
 import './Layout.css'
 
 const Layout = ({ children }) => {
-  const {state} = useContext(UserContext);
+  const {state, handleLogout} = useContext(UserContext);
+
+  console.log(state);
 
   return (
     <div className='layout-container'>
@@ -20,7 +22,7 @@ const Layout = ({ children }) => {
                 state.isLogin ? (
                   <>
                     <h3 className='username'>{`Hola, ${state?.name}`} <BsPersonCircle/></h3>
-                    <button className='btn'>Logout</button>
+                    <button className='btn' onClick={() => handleLogout()}>Logout</button>
                   </>
                 )
                 : (

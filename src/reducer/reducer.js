@@ -17,6 +17,10 @@ export const reducer = (state, action) => {
             return {
                 ...state, ...action.payload, isLogin: true
             }
+        case 'LOGOUT':
+            return {
+                initialState
+            }
         default:
             return state
     }

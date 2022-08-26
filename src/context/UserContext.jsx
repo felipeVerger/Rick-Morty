@@ -21,12 +21,19 @@ const UserContextProvider = ({ children }) => {
     });
   }
 
+  const handleLogout = () => {
+    dispatch({
+      type: 'LOGOUT'
+    });
+  }
+
   return (
     <UserContext.Provider
       value={{
         state,
         handleRegister,
-        handleLogin
+        handleLogin,
+        handleLogout
       }}
     >
       {children}
