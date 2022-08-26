@@ -31,25 +31,19 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setErrors(validation(formData));
-
-    console.log(errors);
-
-    if (errors?.length === 0) {
-      handleRegister(formData);
-      navigate('/login');
-    }
+    // setErrors(validation(formData));
+    handleRegister(formData)
+    navigate('/login')
   }
 
   const validation = (values) => {
     const {name, email, password, confirmPassword} = values;
-
     let errors = {};
 
     if (!name) {
       errors.name = 'Required';
     }
-    
+
     return errors;
   }
 
